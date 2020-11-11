@@ -1,4 +1,4 @@
-  describe('Teste Automatizado', function (){
+ describe('Teste Automatizado', function (){
   it('Criar Cartão', function (){
     cy.visit('https://trello.com/login') // visitar site trello, parte de login
 

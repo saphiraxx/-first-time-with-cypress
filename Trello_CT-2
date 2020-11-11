@@ -1,0 +1,45 @@
+describe('Teste CT-2', function (){
+  it('Criar Cartão', function (){
+    cy.visit('https://trello.com/login') // visitar site trello, parte de login
+
+    cy.get('#user')
+      .type('saphiraxavier@hotmail.com')// Preencher o campo E-mail
+
+    cy.get('#password-entry')//Preencher o campo senha
+      .type('9969maria')
+
+    cy.get('#login').click()// Clicar no botão Login
+
+    cy.get('.board-tile.mod-add').click() // Clicar em Criar novo Quadro
+
+    cy.get('.subtle-input')
+      .type('Quadro Teste')//Colocar nome do quadro
+
+    cy.get('.button.primary').click()//Clicar em Criar Quadro
+
+    cy.wait(2000) //Espera 2 segundos para a página carregar
+
+    cy.get('.list-name-input')//Colocar nome da Lista
+      .type('Lista Teste')
+
+    cy.get('.primary.mod-list-add-button.js-save-edit').click()//Clicar em Adicionar Lista
+
+    cy.get('.js-add-a-card').click()//Clicar em Adicionar um cartão
+
+    cy.get('.list-card-composer-textarea.js-card-title')//Colocar nome do cartão
+      .type('Cartão Teste')
+
+    cy.get('.primary.confirm.mod-compact.js-add-card').click()//Clicar em Adicionar Cartão
+
+      .get('.icon-lg.icon-close.dark-hover.js-cancel').click()//clicar no x
+  
+      .get('.list-card-details.js-card-details').click()//Clicar no cartão
+    
+    .get('.button-link.js-more-menu').click()//Clicar em compartilhar
+    
+    .get('.js-delete').click()//clicar em excluir 
+
+    .get('.js-confirm.full.negate').click()//confirmar exclusão
+
+     })
+})
